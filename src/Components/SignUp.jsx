@@ -10,6 +10,7 @@ import axios from 'axios';
 
 const Signup = () => {
 const [email,setEmail]=useState('')
+const [showOtpForm, setShowOtpForm] = useState(false);
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -48,6 +49,7 @@ const [email,setEmail]=useState('')
       if (authenticated) {
 
         setEmail(email)
+        setShowOtpForm(true)
        // navigate('/signupstep2');
         // navigate('/otp-auth?email=${encodeURLComponent(email)}');
 
