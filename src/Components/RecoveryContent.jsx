@@ -12,6 +12,7 @@ const DashBoard1_Down = () => {
   return (
 
     <div>
+      <div className="dashboard-container">
           <div className="dashboard-content">
              <p>Notification</p>
              <div className="notification">
@@ -197,6 +198,7 @@ const DashBoard1_Down = () => {
           </tr >
         </tbody>
       </table>
+    </div>
     </div>
     </div>
   );

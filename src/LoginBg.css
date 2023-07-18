@@ -6,9 +6,18 @@
   height: 100%;
   width: 100%;
 }
+
 .background-image {
   margin-left: 11.1em;
 }
+
+.lap {
+  margin-top: 8.5em;
+  height: 75%;
+  width: 75%;
+  margin-left: 7.8em;
+}
+
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -17,12 +26,15 @@
   text-align: center;
   position: absolute;
   bottom: 2em;
-  left: 3em;
+  left: 13em;
 }
+
 .quote {
   color: var(--dashboard-bg-clr);
   margin-top: 1em;
+  font-size: 13px;
 }
+
 .quote-text {
   margin: 0.5em 0;
   color: var(--credit-score-bg-clr);

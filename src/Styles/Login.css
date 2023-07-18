@@ -12,9 +12,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
-  /* margin-right: 5em; */
+  margin-left: 2em;
   padding: 0 5em;
 }
 
@@ -27,12 +27,16 @@
   outline: 0;
   border: 1px solid black;
 }
+
 .loginheader {
   color: var(--main-text-color);
-  margin: 25px auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 130px;
   font-size: 2.5em;
   font-family: var(--font-family-body);
   font-weight: bold;
+
 }
 
 .login-btn {
@@ -44,7 +48,7 @@
   border: 0;
   border-radius: 1em;
   padding: 0.8em;
-  margin-left: 3em;
+  /* margin-left: 2em; */
   text-align: center;
 
   cursor: pointer;
@@ -54,11 +58,15 @@
   background-color: transparent;
   color: #ffffff;
   border: none;
+  line-height: 0.25;
+  width: 28em;
+  font: 0.1em;
 }
+
 .login-eye {
   position: absolute;
-  top: 19.5rem;
-  left: 74rem;
+  top: 20.2rem;
+  left: 72.5rem;
 }
 
 .footnote {
@@ -67,6 +75,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .footnote2 {
   margin-top: 3em;
   font-size: 0.8rem;
