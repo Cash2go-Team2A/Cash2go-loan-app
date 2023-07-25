@@ -108,12 +108,13 @@
 .hidden {
   display: none;
 }
+/* MEDIA QUERY */
 @media (max-width: 768px)  {
 .left-side{
   display: none;
 }
 .right-side{
-width: 100%;
+width: 50%;
 }
 .Question-form{
   padding: 0 1rem;
