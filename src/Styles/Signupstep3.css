@@ -103,3 +103,35 @@
   top:397px;
   left:175px;
 }
+
+/* Add a media query for devices with a maximum width of 768px (e.g., tablets and mobile devices) */
+@media (max-width: 768px) {
+  .Signup3-container {
+    margin-top: 40px; 
+    padding: 1em; 
+  }
+
+  .b-signup3 {
+    width: 100%; 
+  }
+
+  .eye,
+  .eye2 {
+    left: auto; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+  }
+
+  .terms-signin {
+    margin-left: 0; 
+    text-align: center; 
+  }
+
+  /* Adjust the positioning of the logo for smaller screens */
+  .logo {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
