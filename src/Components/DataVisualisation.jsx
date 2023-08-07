@@ -4,6 +4,7 @@ import { useTable } from "react-table";
 
 const DataVisualization = ({ data }) => {
   // Prepare data for the pie chart
+  console.log(data)
   const pieData = {
     labels: data.variables.map((variable) => variable.variableName),
     datasets: [

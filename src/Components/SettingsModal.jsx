@@ -160,30 +160,49 @@ const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll }) => {
   // Function to handle the "Save" button click
   const handleSave = () => {
     // Collect the data provided by the user from input fields and save it in the state
+    const modelName = document.getElementById("modelName").value;
+    console.log('modelName',modelName)
+    const modelDescription = document.getElementById("modelDescription").value;
+    console.log('modelDescription',modelDescription)
+    const creditScoreOperator = document.getElementById("creditScoreOperator").value;
+    console.log('creditScoreOperator',creditScoreOperator)
+    const creditScoreValue = document.getElementById("creditScoreValue").value;
+    console.log('creditScoreValue',creditScoreValue)
+    const amountInAccountOperator = document.getElementById("amountInAccountOperator").value;
+    console.log('amountInAccountOperator',amountInAccountOperator)
+    const amountInAccountValue = document.getElementById("amountInAccountValue").value;
+    console.log('amountInAccountValue',amountInAccountValue)
+    const creditBalanceOperator = document.getElementById("creditBalanceOperator").value;
+    console.log('creditBalanceOperator',creditBalanceOperator)
+    const creditBalanceValue = document.getElementById("creditBalanceValue").value;
+    console.log('creditBalanceValue',creditBalanceValue)
+  
+    // Perform null checks on the input values
     const data = {
-      modelName: document.getElementById("modelName").value,
-      modelDescription: document.getElementById("modelDescription").value,
+      modelName: modelName || "",
+      modelDescription: modelDescription || "",
       variables: [
         {
           variableName: "Credit Score",
-          operator: document.getElementById("creditScoreOperator").value,
-          value: document.getElementById("creditScoreValue").value,
+          operator: creditScoreOperator || "",
+          value: creditScoreValue || "",
         },
         {
           variableName: "Amount in Account",
-          operator: document.getElementById("amountInAccountOperator").value,
-          value: document.getElementById("amountInAccountValue").value,
+          operator: amountInAccountOperator || "",
+          value: amountInAccountValue || "",
         },
         {
           variableName: "Credit Balance",
-          operator: document.getElementById("creditBalanceOperator").value,
-          value: document.getElementById("creditBalanceValue").value,
+          operator: creditBalanceOperator || "",
+          value: creditBalanceValue || "",
         },
       ],
     };
+  
     setUserInputData(data);
   };
-
+  
   return (
     <div className="mode">
       <div>
@@ -274,7 +293,15 @@ const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll }) => {
                   <option value="<">Less Than</option>
                   <option value="=">Equal To</option>
                 </select>
-                </td>               <td><img src={Deleteicon} alt="delele-icon" className="delete-icon"/></td>
+              </td>    
+              <td>
+                <select id="creditBalanceValue" className="form-input">
+                  <option value="0">0</option>
+                  <option value="100000">100000</option>
+                  <option value="500000">500000</option>
+                </select>
+              </td>        
+                <td><img src={Deleteicon} alt="delele-icon" className="delete-icon"/></td>
            </tr>
            </tbody>
         </table> 
