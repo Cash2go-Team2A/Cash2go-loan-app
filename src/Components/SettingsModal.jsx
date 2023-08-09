@@ -148,17 +148,20 @@
 
 
 
-import React, { useState } from "react";
+import React from "react";
 import "../Styles/Create.css";
 import Deleteicon from '../assets/delete-icon.png';
-import DataVisualization from './DataVisualisation';
+//import DataVisualization from './DataVisualisation';
+//import { useNavigate } from "react-router-dom";
 
-const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll }) => {
+
+const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll,onSave}) => {
   // State to store the user-provided data
-  const [userInputData, setUserInputData] = useState(null);
+  
 
   // Function to handle the "Save" button click
   const handleSave = () => {
+  
     // Collect the data provided by the user from input fields and save it in the state
     const modelName = document.getElementById("modelName").value;
     console.log('modelName',modelName)
@@ -200,7 +203,9 @@ const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll }) => {
       ],
     };
   
-    setUserInputData(data);
+    // setUserInputData(data);
+    onSave(data);
+    
   };
   
   return (
@@ -342,7 +347,7 @@ const SettingsModal = ({ closeModal, setMarkAllClicked, setClickAll }) => {
         </button>
           </div>
       </div>
-      {userInputData && <DataVisualization data={userInputData} />}
+      {/* {userInputData && <DataVisualization data={userInputData} />} */}
   </div> 
   );
  };
