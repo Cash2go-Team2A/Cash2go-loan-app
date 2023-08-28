@@ -65,18 +65,19 @@ const Chart = () => {
     }
     
     return (
-        <div className="container-pie">
+        
+        <div className="container-pie ">
             <div>
             <div className="bar">
-            <h4>Previous Loans</h4>
-             <h6>Subtitle</h6>
-             <hr />
+                <p>Previous Loans</p>
+                <p>Subtitle</p>
+                <hr />
             </div>
                 
                 
-                <div>
-                <h4>Maximum Loan Request</h4>
-                <h3>N 92000</h3>
+            <div>
+                <p>Maximum Loan Request</p>
+                <p>N 92000</p>
                 </div>
                 <Bar data={data} options={options}></Bar>
                 <hr />
