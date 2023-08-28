@@ -23,74 +23,68 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-const Chart =() => {
-    
+const Chart = () => {
+
     const data = {
         labels: ["May 2018", "Aug 2019", "Sep 2020", "Jan 2021", "Dec 2021"],
         datasets: [
             {
-                labels: ['Short-term','Long-term'],
-                data:[50 ,100,90 ,80,40,85],
-                backgroundColor:'#454e5c',
-            }],     
+                labels: ['Short-term', 'Long-term'],
+                data: [50, 90, 60, 80, 40, 85],
+                backgroundColor: '#454e5c',
+            }],
+    }
+
+    const options = {
+
+        plugins:{
+            legend:false,
+        },
+        scales:{
+            x:{
+                grid:{
+                    display:false
+                }
+            },
+            y:{
+                grid:{
+                    display:false
+                },
+                min:0,
+                max:100,
+                ticks:{
+                    stepSize:25,
+                    callback:(value)=>value + "k",
+                    autoSkipPadding:0,  
+                    maxTicksLimit: 4.5, 
+                    
+                },
+
+            }
+        }
     }
     
-    const options = {
-        type: 'bar',
-    data,
-    options:{
-        scales:{
-            x:[{
-                grid:{
-                    drawOnChartArea:false
-                },
-                border:{
-                    display:false,
-                }
-            }],
-            y :{
-                beginAtZero:true,
-                grid:{
-                    drawOnChartArea:false
-                },
-                ticks:{
-                    maxTicksLimit:4,
-                    callback:((context ,index)=>{
-                        console.log(context)
-                        let response;
-                        if (context === 1){
-                            response = '10k';
-                        } else if (context === 2){
-                            response = '50k';
-                        }else if (context === 3){
-                            response = '100k';
-                        }else{
-                            response ='0';
-                        }
-                        return response;
-                    })
-                },
-               
-            }
-            
-        } 
-    }
-    }
     return (
-        <div className="container">
-        <div className="bar">
-            <h3>Previous Loans </h3>
-            <h6>Subtitle</h6>
-            <hr />
-            <h4>Maximum Loan Request</h4>
-            <h3>N 92000</h3>
-
-            <Bar  data={data} options={options}></Bar>
-            <hr />
-            <Link> More <img src={RightArrow} alt="right-arrow" /></Link>
-            </div>
-            </div> 
         
+        <div className="container-pie ">
+            <div>
+            <div className="bar">
+                <p>Previous Loans</p>
+                <p>Subtitle</p>
+                <hr />
+            </div>
+                
+                
+            <div>
+                <p>Maximum Loan Request</p>
+                <p>N 92000</p>
+                </div>
+                <Bar data={data} options={options}></Bar>
+                <hr />
+                <Link> More <img src={RightArrow} alt="right-arrow" /></Link>
+            </div>
+        </div>
+
     );
 };
 

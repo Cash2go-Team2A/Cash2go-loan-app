@@ -1,34 +1,213 @@
-.bvn-header {
-    text-align: left;
+/*.form-containerss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 530px;
+  max-width: 900px;
+
+  margin: 15px auto; 
+
+  padding: 25px;
+  border: 1px solid#f2f2f2;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+}
+.bvn-h1{
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+.bvn_form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bvn-h3 {
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+button {
+  margin-top: 10px;
+}
+.bvn-default{
+  width: 100%;
+}
+.bvn-default,
+select[type="text"] {
+  padding: 10px 40px;
+  border-radius: 5px;
+  border: 1px solid hwb(0 22% 77% / 0.932);
+
+}
+
+.info-submit {
+  background-color: rgb(34, 32, 32);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}*/
+
+.form-containerss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 15px auto;
+  padding: 25px;
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+}
+
+.bvn-h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.bvn_form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+/* Media query for tablets and larger devices */
+@media (min-width: 768px) {
+  .bvn_form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bvn-h3 {
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+button.info-submit {
+  background-color: rgb(34, 32, 32);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Ensures the form fields take up the full width on all screen sizes */
+.bvn-default,
+select[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid hwb(0 22% 77% / 0.932);
+}
+
+/* Margin to the button on smaller screens */
+@media (max-width: 768px) {
+  button.info-submit {
+    margin-top: 20px;
+  }
+}
+
+/* Styling for top navigation */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item li {
+  margin-right: 20px;
+}
+
+.nav-item li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-item li a:hover {
+  color: rgb(34, 32, 32);
+}
+
+
+/*.bvn-header {
+   margin-left: 50px;
   }
   
   .bvn-container {
-    max-width: 1000px;
-    /*margin: 0 auto;
-    padding: 25px;*/
+    max-width: 600px;
     border: 1px solid grey;
     background-color: #f2f2f2;
     max-height: 230px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 10px 50px;
+    border-radius: 5px;
+    padding: 0px 40px;
   }
   
   
   .input-field {
-    width: 40%;
-    padding: 5px;
+    width: 90%;
+    padding: 0.625rem 0.3125rem;
+    border-radius: 0;
+    border:1px solid black;
+  }
+  .file-field{
+    padding:0 0.3125rem 1.5625rem 0px;
+    border: none;
   }
   
   .submit-button {
     width: 35%;
-    padding: 10px;
+    padding: 12px;
     background-color: black;
     color: white;
+    display: block;
+    margin-bottom: 1.5625rem;
+  }
+  .btn-file-submit{
+    margin-bottom: 5rem;
+  }
+  .bank-statement{
+    margin-top: 4.375rem;
+  }
+  .bank-details{
+    padding: 0;
+  }
+  .upload-pdf{
+    padding-top: 0.625rem;
   }
 
   h3 {
     border-bottom: 1px solid black ;
-  }
+  }*/
+
   
   

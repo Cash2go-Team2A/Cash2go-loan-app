@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/sidebar.css';
 import Logo from './Logo';
 import Grid from '../assets/ViewGrid.svg';
@@ -9,61 +9,115 @@ import Message from '../assets/Message.svg';
 import Resources from '../assets/Resources.svg';
 import Settings from '../assets/Settings.svg';
 import HelpCenter from '../assets/Helpcenter.svg';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom'
 
 const Sidebar = () => {
+  const [activeLink, setActiveLink] = useState('');
+  const navigate=useNavigate()
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+  
+  
+  const handleLogout = () => {
+    // Perform logout actions if needed
+    
+    navigate('/'); // Redirect to the login page
+  };
+
+
   return (
     <div className="sidebar">
-      <div className="sidebar-logo">
-        <Logo />
+      <div className="sidebar-log">
+        <Logo  />
       </div>
 
       <div className="sidebar-items1">
-        <Link to="/dashboard" className="links">
+        <NavLink
+          to="/dashboard"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/dashboard')}
+        >
           <img src={Grid} alt="Dashboard-icon" />
           <p>Dashboard</p>
-        </Link>
-        <Link to="/application" className="links">
+        </NavLink>
+        <NavLink
+          to="/application"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/application')}
+        >
           <img src={Applications} alt="Application-icon" />
           <p>Applications</p>
-        </Link>
-        <Link to="/analytics" className="links">
+        </NavLink>
+        <NavLink
+          to="/analytics"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/analytics')}
+        >
           <img src={Analytics} alt="Dashboard-icon" />
           <p>Analytics</p>
-        </Link>
-        <Link to="/recovery" className="links">
+        </NavLink>
+        <NavLink
+          to="/recovery"
+          className= {`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/recovery')}
+        >
           <img src={Recovery} alt="Dashboard-icon" />
           <p>Recovery</p>
-          <p className='p-red'>
-            <span className='one'>1</span>
-          </p>
-        </Link>
-        <Link to="/message" className="links">
+        </NavLink>
+        <NavLink
+          to="/message"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/message')}
+        >
           <img src={Message} alt="Dashboard-icon" />
           <p>Messages</p>
-          <p className='p-green'>
-            <span className='one1'>1</span>
-          </p>
-          
-
-        </Link>
+        </NavLink>
       </div>
       <div className="sidebar-items2">
-        <Link to="/resources" className="links">
+        <NavLink
+          exact
+          to="/application"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('')}
+        >
           <img src={Resources} alt="Dashboard-icon" />
           <p>Resources</p>
-        </Link>
-        <Link to="/settings" className="links">
+        </NavLink>
+        <NavLink
+          to="/settings"
+          className={`links ${activeLink === '/dashboard' ? 'active' : ''}`}
+          activeClassName="active"
+          onClick={() => handleLinkClick('/settings')}
+        >
           <img src={Settings} alt="Dashboard-icon" />
           <p>Settings</p>
-        </Link>
-        <Link to="/help-center" className="links">
+        </NavLink>
+        <NavLink to="/resources" className="links">
           <img src={HelpCenter} alt="Dashboard-icon" />
           <p>Help Center</p>
-        </Link>
+        </NavLink>
+        <div className="logout-div">
+          <NavLink to="/"  
+              className="log-out"
+              onClick={handleLogout}
+          >
+                Log out
+          </NavLink>
+        </div>
       </div>
 
-      <Link to="/log-out" className="log-out">Log out</Link>
+     
+     
+
     </div>
   );
 };

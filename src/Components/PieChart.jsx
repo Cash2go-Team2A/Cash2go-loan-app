@@ -1,3 +1,4 @@
+
 import React from 'react'
 import '../Styles/chart.css'
 import approvedTransparent from '../assets/approved-transparent.svg';
@@ -12,14 +13,17 @@ ChartJs.register(
   Tooltip,
   Legend
 );
-const PieChart = () => {
+const PieChart = ({ color, Anlytper,modeRange }) => {
+  const defaultColor = ['#249c56', 'white'];
+  const score = '720';
   const data = {
     label:[],
     datasets: [{
       label: 'credit score',
       data: [0 - 719, 720 - 1000],
-      backgroundColor: ['#249c56', 'white'],
+      backgroundColor: color || defaultColor,
       borderColor: ['white', 'white'],
+      borderWidth:4
     
     }]
   }
@@ -34,14 +38,14 @@ const PieChart = () => {
        const yCoor = (chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y); 
       // const yCoor =chart.getDatasetMeta(0).data[0].y;
       ctx.save();
-      ctx.font = ' bolder 40px sans-serif';
+      ctx.font = ' bolder 30px sans-serif';
       ctx.fillStyle = 'green';
       ctx.textAlign='center'
       ctx.textBaseLine= 'middle'
-      ctx.fillText('720 ', xCoor,yCoor -20);
+      ctx.fillText(Anlytper || score, xCoor, yCoor - 10);
   
   
-      ctx.font = ' bolder 20px sans-serif';
+      ctx.font = ' bolder 15px sans-serif';
       ctx.fillStyle = 'grey';
       ctx.fillText('credit Score ', xCoor,yCoor + 10);
 
@@ -51,10 +55,10 @@ const PieChart = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container-pie">
     <div className='pie'>
-      <h4>Credit Score</h4>
-      <h6>FICO Model</h6>
+      <p>Credit Score</p>
+      <p>FICO Model</p>
       <hr />
       <div classname='doughnut'>
         <Doughnut
@@ -65,7 +69,7 @@ const PieChart = () => {
         >
 
         </Doughnut>
-        <p className='chartStyle'>(720 - 850)
+        <p className='pie-p'>(720 - 850) 
           <button className="approved">
             {' '}
             <img src={approvedTransparent} alt="approved-icon" /> Excellent
@@ -79,7 +83,9 @@ const PieChart = () => {
     </div>
   </div>
     </div>
-  )
-}
-
-export default PieChart
+  
+ );
+ 
+ };
+ 
+ export default PieChart;
